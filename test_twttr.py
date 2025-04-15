@@ -1,3 +1,5 @@
+import pytest
+
 from twttr import shorten
 
 
@@ -19,3 +21,14 @@ def test_shorten_caps():
 
 def test_shorten_blank():
     assert shorten("") == ""
+
+
+def test_shorten_type_error():
+    with pytest.raises(TypeError):
+        shorten()
+
+    with pytest.raises(TypeError):
+        shorten(1)
+
+    with pytest.raises(TypeError):
+        shorten(0.5)

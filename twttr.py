@@ -5,6 +5,9 @@ def main():
 
 
 def shorten(word):
+    if not isinstance(word, str):
+        raise TypeError
+
     output = ""
 
     vowels = ["a", "e", "i", "o", "u"]
