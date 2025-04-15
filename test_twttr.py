@@ -16,7 +16,11 @@ def test_shorten_no_vowels():
 
 
 def test_shorten_caps():
-    assert shorten("Menaka") == "Mnk"
+    assert shorten("MENAKA") == "MNK"
+
+
+def test_shorten_mixed_case():
+    assert shorten("MENaka") == "MNk"
 
 
 def test_shorten_blank():
