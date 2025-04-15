@@ -5,16 +5,16 @@ def main():
 
 
 def shorten(word):
+    # Remove all lowercase and uppercase vowels from the input string
+
     if not isinstance(word, str):
         raise TypeError
 
-    output = ""
-
     vowels = ["a", "e", "i", "o", "u"]
 
-    for char in word:
-        if not char.lower() in vowels:
-            output = output + char
+    output = "".join(
+        char for char in word if char.lower() not in vowels
+    )  # This is more efficient than using for loop and iterative string concatenation
 
     return output
 

@@ -23,6 +23,18 @@ def test_shorten_blank():
     assert shorten("") == ""
 
 
+def test_shorten_spaces():
+    assert shorten("    ") == "    "
+
+
+def test_shorten_punctuation():
+    assert shorten("a.e!i?o,u") == ".!?,"
+
+
+def test_shorten_with_numbers():
+    assert shorten("a1e2i3o4u5") == "12345"
+
+
 def test_shorten_type_error():
     with pytest.raises(TypeError):
         shorten()
